@@ -35,7 +35,7 @@
 				<a href="/Profil.php">
 					<li>Profil</li>
 				</a>
-				<a href="#.html">
+				<a href="MesProgrammes.php">
 					<li>Mes Programmes</li>
 				</a>
 				<a href="#.html">
