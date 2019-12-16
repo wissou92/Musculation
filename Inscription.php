@@ -7,7 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="style_inscription.css">
 </head>
 <body>
-	<form method="post" action="Connexion.php">
+	<form method="post" action="Inscription.php">
 		<div class="formulaire">
 			<p>Inscrivez-vous</p>
 		</div>
@@ -48,58 +48,46 @@
 		
 
 		<div class="formulaire" id="button">
-			<button type="submit" id="envoi">Inscription</button>
+			<button type="submit" id="envoi" name = "inscrit"  value="inscription">Envoyer</button>
 		</div>
 	</form>
 <?php
 session_start();
-
-  $prenom ;$nom ; $email ; $age ; $poids ; $taille ; $mdp;  
-   				if ( isset($_POST))
+   $nom; $prenom; $email; $mdp; $poids; $age; $taille;   
+   				if (isset($_POST))
    				{ 
-	
-   					if(!empty($_POST['prenom_adherent']))		
-   					{
-   						   $prenom = $_POST['prenom_adherent'];
-   					}
-   					if(!empty($_POST['nom_adherent']))		
-   					{
-   						   $nom = $_POST['nom_adherent'];
-   					}
-   					if(!empty($_POST['email_adherent']))		
-   					{
-   						   $email = $_POST['email_adherent'];
-   					}
-   					 if(!empty($_POST['mdp_adherent']))		
-   					{
-   						   $mdp = $_POST['mdp_adherent'];
-   						 
-   					}
-   					 if(!empty($_POST['age_adherent']))		
-   					{
-   						   $age = $_POST['age_adherent'];
-   					}
-   					 if(!empty($_POST['poids_adherent']))		
-   					{
-   						   $poids = $_POST['poids_adherent'];
-   						  
-   					}
-   				     if(!empty($_POST['taille_adherent']))		
-   					{
-   						   $taille = $_POST['taille_adherent'];
-   					}
-   					
-try{    
-	$bdd = new mysqli('localhost', 'root', 'user', 'Programmes_Sportifs');
-	$bdd->set_charset("utf8");
-$req = $bdd->query ("INSERT INTO Adherant(nom,prenom,email,mdp,poids,age,taille) VALUES('$nom' , '$prenom', '$email', '$mdp', '$poids', '$age' , '$taille')");
-}
 
-catch (Exception $e)
-{   
-	die('Erreur : ' . $e->getMessage());
-}
-  
+   			
+				   	if ( isset($_POST['inscrit']) && $_POST['inscrit'] == 'inscription')
+				   {				
+					   try{    
+							$bdd = new mysqli('localhost', 'root', 'user', 'Programmes_Sportifs'); $bdd->set_charset("utf8");
+						  }
+					   catch (Exception $e)
+					   						{  
+					   							 die('Erreur : ' . $e->getMessage());
+					   					    }
+
+					   $nom = $_POST['nom_adherant']; 
+					   $prenom =$_POST['prenom_adherant']; 
+					   $email = $_POST['email_adherant'];
+					   $mdp = password_hash($_POST['mdp_adherant'] ,PASSWORD_DEFAULT);
+					   $poids= $_POST['poids_adherant']; 
+					   $age =$_POST['age_adherant']; 
+					   $taille =$_POST['taille_adherant'];
+
+					   	// cest ca marche mais faut securiser le mdp ca je sais pas faire 
+
+				 	$req = "INSERT INTO Adherant(nom,prenom,email,mdp,poids,age,taille) 
+					VALUES('$nom','$prenom','$email', '$mdp',$poids,$age,$taille);";
+
+
+					    $result = $bdd-> query($req) or die('Erreur SQL !<br>'.$sql3.'<br>'.mysqli_error());
+
+					    
+				  
+					}
+
 }
    			
 
