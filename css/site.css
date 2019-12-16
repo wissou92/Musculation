@@ -1,10 +1,14 @@
 body {
 	font-family: sans-serif;
 	margin: 0;
+	width: 100%;
+	background-color: rgba(70, 130, 180, 0.1);
 }
 
 #contenu {
-	width: 100%;
+	margin: auto;
+	margin-bottom: 0px;
+	width: 80%;
 	height: 80%;
 	background-color: white;
 	color: black;
@@ -12,4 +16,67 @@ body {
 	flex-direction: column;
 	justify-content: space-around;
 	align-items: center;
+}
+
+#contenu h1 {
+	font-size: 28px;
+	color: steelblue;
+}
+
+#contenu p {
+	color: black;
+}
+
+#contenu a {
+	color: steelblue;
+	text-decoration: none;
+	transition: 0.1s;
+}
+
+#contenu a:hover {
+	text-decoration: underline;
+}
+
+#contenu form {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#contenu form .formulaire {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	width: 70%;
+	height: 50px;
+	margin-top: 15px;
+}
+
+#contenu form .formulaire label {
+	align-self: flex-start;
+	color: steelblue;
+}
+
+#contenu form .formulaire input {
+	border: 0;
+	border-bottom: 2px solid steelblue;
+	box-shadow: none;
+	width: 100%;
+}
+
+#contenu form .formulaire input:focus {
+	outline: none;
+}
+
+#contenu form .formulaire input[type="submit"] {
+	width: 100px;
+	height: 30px;
+	background-color: white;
+	border: 2px solid steelblue;
+	color: steelblue;
+	font-size: 15px;
+	border-radius: 15px;
+	margin-top: 20px;
 }

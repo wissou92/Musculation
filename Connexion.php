@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -24,12 +26,12 @@
 			</div>
 				
 			<div class="formulaire" id="button">
-			<input  type="submit" id="envoi"   value = "connexion" name = connexion ></input>
+			<input  type="submit" id="envoi"   value = "connexion" name ="connexion" ></input>
 			</div>
 		</form>
 	</div>
 <?php 
-	 session_start(); $email ; $mdp;  
+	 $email ; $mdp;  
   	
    if( isset($_POST))
    {
@@ -43,7 +45,7 @@
 	   		$mdp = md5($_POST['mdp_adherent']);
 	   	}
 
-    	if ($_POST['connexion'] ==  'connexion')
+    	if (isset($_POST['connexion']) and $_POST['connexion'] == 'connexion')
     	{
 			try {    
 				$bdd = new mysqli('localhost', 'wiss', 'wiss', 'Programmes_Sportifs');
@@ -52,8 +54,10 @@
 			catch (Exception $e) {    
 				die('Erreur : ' . $e->getMessage());
 			}
+
+		// bizarre ca si l'utilisateur nexiste pas ?
 											
-		$resultat = $bdd -> query ("select email,mdp from Adherant where email = '$email' and mdp = '$mdp' ;");
+		$resultat = $bdd -> query ("select email, mdp from Adherant where email = '$email' and mdp = '$mdp';");
 												
 		// je garde lemail de ladherant 
 		// et la session 

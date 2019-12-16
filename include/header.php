@@ -1,5 +1,3 @@
-<?php session_start(); ?>
-
 	<header>
 		<div id="banniere">
 		</div>
@@ -17,8 +15,11 @@
 					die('Erreur : ' . $e->getMessage());
 				}
 
-				$email = $_SESSION[email];
+				
+				$email = $_SESSION["email"];
+
 				$resultat = $bdd->query("select nom ,prenom from Adherant where Adherant.email = '$email' ; ");
+
 						
 					if ($resultat) 
 					{

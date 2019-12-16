@@ -3,9 +3,10 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Programmes Sportifs</title>
+		<link rel="stylesheet" type="text/css" href="css/site.css" >
 		<link rel="stylesheet" type="text/css" href="css/header.css">
 		<link rel="stylesheet" type="text/css" href="css/footer.css">
-		<link rel="stylesheet" type="text/css" href="css/site.css" >
+		
 	</head>
 	<body>
 		<?php require('include/header.php'); ?>
@@ -39,16 +40,16 @@
 				</div>
 
 				<div class="formulaire">
-					<label for="email">email:</label>
-					<input type="email" id="email" name="email_adherant"  placeholder="<?php echo $_SESSION[email];?>">
+					<label for="email">E-mail:</label>
+					<input type="email" id="email" name="email_adherant"  placeholder="<?php echo $_SESSION["email"];?>">
 				</div>
 
 				<div class="formulaire">
-					<label for="nom">nom:</label>
+					<label for="nom">Nom :</label>
 					<input type="nom" id="nom" name="nom_adherant" disabled="oui" placeholder="<?php echo $nom ; ?>">
 				</div>
 				<div class="formulaire">
-					<label for="prenom">prenom:</label>
+					<label for="prenom">Prenom:</label>
 					<input type="prenom" id="prenom" name="prenom_adherant" disabled="oui"   placeholder="<?php echo $prenom;?>">
 				</div>
 					
@@ -58,16 +59,16 @@
 				</div>
 
 				<div class="formulaire">
-					<label for="age">age :</label>
+					<label for="age">Age :</label>
 					<input type="number" id="age" name="age_adherant"   disabled="oui"  placeholder="<?php echo $age;?>" >
 				</div>
 				<div class="formulaire">
-					<label for="poids">poids :</label>
+					<label for="poids">Poids :</label>
 					<input type="number" id="poids" name="poids_adherant" placeholder="<?php echo $poids;?>">
 				</div>
 
 				<div class="formulaire">
-					<label for="taille">taille :</label>
+					<label for="taille">Taille :</label>
 					<input type="number" id="taille" name="taille_adherant" placeholder="<?php echo $taille;?>">
 				</div>
 
@@ -119,7 +120,8 @@
 		}
 	  }
 	?>
-			<?php require('include/footer.php'); ?>
+</div>
+	<?php require('include/footer.php'); ?>
 	</body>
 </html>
 

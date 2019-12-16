@@ -7,9 +7,10 @@ header {
 }
 
 header #banniere {
-	height: 150px;
-	background: url('/img/header.jpg');
+	height: 200px;
+	background: url('/img/header2.jpg');
 	background-size: 100%;
+	background-position-y: -350px; 
 }
 
 header nav {
