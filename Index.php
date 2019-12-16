@@ -4,8 +4,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title> UVSQ Training </title>
-	<link rel="stylesheet" type="text/css" href="css/index.css">
-	<link rel="stylesheet" type="text/css" href="css/footer.css">
+	<link rel="stylesheet" type="text/css" href="/css/index.css">
+	<link rel="stylesheet" type="text/css" href="/css/footer.css">
 </head>
 
 <body>
@@ -19,8 +19,8 @@
 			</ul>
 		</nav>
 		<nav id="identification">
-			<a href="Connexion.php" id="connexion"><button>Se Connecter</button></a>
-			<a href="Inscription.php" id="inscription"><button>S'Inscrire</button></a>
+			<a href="/Connexion.php" id="connexion"><button>Se Connecter</button></a>
+			<a href="/Inscription.php" id="inscription"><button>S'Inscrire</button></a>
 		</nav>
 	</div>
 

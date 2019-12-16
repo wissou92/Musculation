@@ -1,31 +1,56 @@
+<?php session_start(); ?>
+
 	<header>
 		<div id="banniere">
 		</div>
 		<nav>
-			<div id="information"></div>
+			<div id="information">
+			<?php	
+				$nom ;  $prenom; 
+				try
+				{    
+					$bdd = new mysqli('localhost', 'wiss', 'wiss', 'Programmes_Sportifs'); 
+					$bdd->set_charset("utf8");
+				}
+				catch (Exception $e)
+				{   
+					die('Erreur : ' . $e->getMessage());
+				}
+
+				$email = $_SESSION[email];
+				$resultat = $bdd->query("select nom ,prenom from Adherant where Adherant.email = '$email' ; ");
+						
+					if ($resultat) 
+					{
+				      $row = $resultat->fetch_row();
+				      $resultat->close();
+				      $nom= $row[0]; 
+				      $prenom = $row [1];
+				    }
+				     
+				    echo '<p>' . ucfirst($nom) .' '. ucfirst($prenom). '</p>';
+			?> 
+			</div>
 			<ul>
-				<a href="Profil.php">
+				<a href="/Profil.php">
 					<li>Profil</li>
 				</a>
 				<a href="#.html">
-					<li>Programme</li>
+					<li>Mes Programmes</li>
 				</a>
 				<a href="#.html">
 					<li>Coach</li>
 				</a>
 				<a href="#.html">
-					<li>Conseils</li>
+					<li>Mes Exercices</li>
 				</a>
 				<a href="#.html">
-					<li>Exercices</li>
-				</a>
-				<a href="#.html">
-					<li>Contact</li>
+					<li>Suivi Nutritionnel</li>
 				</a>
 			</ul>
 
 			<div id="deconnexion">
-				<form method="post" action="header.php">
+				<form method="post" action="include/header.php">
 					<input id="deconnect" type="submit" value="Deconnexion" name="deconnect">
 				</form>
 			</div>
@@ -34,11 +59,11 @@
 
 
 <?php
-	if(isset($_POST['deconnect']) && $_POST['deconnect']=='Se déconnecter')
+	if(isset($_POST['deconnect']) && $_POST['deconnect']=='Deconnexion')
  		{
 				session_destroy();
-				header('location:accueil.php');
-				exit;
+				header('location:/Index.php');
+				exit();
 		}
 
 ?>

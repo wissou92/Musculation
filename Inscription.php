@@ -60,26 +60,26 @@ session_start();
 				   	if ( isset($_POST['inscrit']) && $_POST['inscrit'] == 'inscription')
 				   {				
 					   try{    
-							$bdd = new mysqli('localhost', 'root', 'user', 'Programmes_Sportifs'); $bdd->set_charset("utf8");
+							$bdd = new mysqli('localhost', 'wiss', 'wiss', 'Programmes_Sportifs'); 
+							$bdd->set_charset("utf8");
 						  }
 					   catch (Exception $e){ die('Erreur : ' . $e->getMessage());}
 
 					   $nom = $_POST['nom_adherant']; 
 					   $prenom =$_POST['prenom_adherant']; 
 					   $email = $_POST['email_adherant'];
-					   $mdp =$_POST['mdp_adherant'];
+					   $mdp = md5($_POST['mdp_adherant']);
 					   $poids= $_POST['poids_adherant']; 
 					   $age =$_POST['age_adherant']; 
 					   $taille =$_POST['taille_adherant'];
+ 						echo $mdp;
+					 	$req = "INSERT INTO Adherant(nom,prenom,email,mdp,poids,age,taille) 
+						VALUES('$nom','$prenom','$email', '$mdp',$poids,$age,$taille);";
 
-					// cest ca marche mais faut securiser le mdp ca je sais pas faire 
-				 	$req = "INSERT INTO Adherant(nom,prenom,email,mdp,poids,age,taille) 
-					VALUES('$nom','$prenom','$email', '$mdp',$poids,$age,$taille);";
-
-					$result = $bdd-> query($req) or die('Erreur SQL !<br>'.$sql3.'<br>'.mysqli_error());
-					
-					header('Location: Connexion.php');
-					exit();
+						$result = $bdd-> query($req) or die('Erreur SQL !<br>'.$sql3.'<br>'.mysqli_error());
+						
+						header('Location:Connexion.php');
+						exit();
 					}
 
 }

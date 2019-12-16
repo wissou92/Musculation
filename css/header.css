@@ -25,6 +25,11 @@ header nav #information {
 	width: 5%;
 }
 
+header nav #information p {
+	color: white;
+	margin-left: 10px;
+}
+
 header nav ul {
 	margin: 0;
 	width: 70%;
@@ -66,3 +71,21 @@ header nav #deconnexion {
 	justify-content: center;
 	align-items: center;
 }
+
+header nav #deconnexion #deconnect {
+	border: 2px solid white;
+	background-color: rgb(65, 125, 175);
+	color: white;
+	width: 100px;
+	height: 30px;
+	font-size: 14px;
+	border-radius: 15px;
+	margin-right: 15px;
+	transition: 0.05s;
+}
+
+header nav #deconnexion #deconnect:hover {
+	background-color: white;
+	color: rgb(65, 125, 175);
+}
+
