@@ -2,7 +2,7 @@ body {
 	width: 100%;
 	height: 100%;
 	font-family: sans-serif;
-	background-color: #ffa259;
+	background-color: steelblue;
 }
 
 form {
@@ -17,14 +17,18 @@ form {
 	background-color: #FFF;
 }
 
-form p {
+form h1 {
 	font-size: 24px;
-	color:#ffa259;
+	color:steelblue;
+	font-weight: bold;
+	align-self: center;
+	color: steelblue;
+	margin: 30px 0;
 }
 
 form label {
 	font-size: 19px;
-	color:#ffa259;
+	color:steelblue;
 }
 
 .formulaire {
@@ -32,21 +36,16 @@ form label {
 	margin: auto;
 	display: flex;
 	flex-direction: column;
-	align-items: flex-start;
-}
-
-
-#button {
-	width: 100px;
 }
 
 input {
 	margin-top: 8px;
-	width: 20px;
+	width: 80px;
 	border: none;
-	border-bottom: 2px solid#ffa259;
+	border-bottom: 2px solid steelblue;
 	transition: width 0.3s;
 }
+
 
 input:focus {
 	outline: none;
@@ -57,35 +56,38 @@ input:hover {
 	width: 90%;
 }
 
-#inscription p a {
-	color: #ffa259;
+
+#connexion p a {
+	color: steelblue;
 	text-decoration: none;
 	font-size: 12px;
 }
 
-#inscription p a:hover {
+#connexion p a:hover {
 	text-decoration: underline;
 }
 
-button {
+#envoi {
 	font-weight: bold;
-	font size: 15px;
-	border-radius: 10px;
-	height: 30px;
+	color:steelblue;
+    margin: auto;
+	border-radius: 25px ;
+	border: 2px solid steelblue;
+	background-color: white;
+	font-weight:bold;
 	width: 100px;
-	border: 2px solid #ffa259;
-	transition: 0.1s;
-	background-color: #FFF;
-	color: #ffa259;
-	border: 2px solid #ffa259;
+	height: 30px;
 }
 
-button:focus {
+#envoi:focus {
 	outline: none;
 }
 
-button:hover {
+#envoi:hover {
 	color: #FFF;
-	background-color: #ffa259;
+	background-color: steelblue;
+	width: 100px;
+	height: 30px;
 }
+
 

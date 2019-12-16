@@ -1,14 +1,10 @@
-<head>
-	<link rel="stylesheet" type="text/css" href="header.css">
-</head>
-<body>
 	<header>
 		<div id="banniere">
 		</div>
 		<nav>
 			<div id="information"></div>
 			<ul>
-				<a href="#.html">
+				<a href="Profil.php">
 					<li>Profil</li>
 				</a>
 				<a href="#.html">
@@ -28,12 +24,21 @@
 				</a>
 			</ul>
 
-			<div id="identifier"><a href="Connexion.html">S'identifier</a></div>
+			<div id="deconnexion">
+				<form method="post" action="header.php">
+					<input id="deconnect" type="submit" value="Deconnexion" name="deconnect">
+				</form>
+			</div>
 		</nav>
 	</header>
 
-	<footer>
-		
-	</footer>
-</body>
-</html>
+
+<?php
+	if(isset($_POST['deconnect']) && $_POST['deconnect']=='Se déconnecter')
+ 		{
+				session_destroy();
+				header('location:accueil.php');
+				exit;
+		}
+
+?>

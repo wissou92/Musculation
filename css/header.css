@@ -1,7 +1,3 @@
-body {
-	margin: 0;
-	font-family: sans-serif;
-}
 
 header {
 	width: 100%;
@@ -10,44 +6,26 @@ header {
 	flex-direction: column;
 }
 
-#banniere {
+header #banniere {
 	height: 150px;
-	background-color: #ffa259;
+	background-color: rgba(70, 130, 170, 0.5);
 }
 
-nav {
+header nav {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 	height: 50px;
 	width: 100%;
-	background-color: #fe6845;
+	background-color: steelblue;
 }
 
-nav #identifier {
-	align-self: center;
-	width: 8%;
-	text-align: center;
-	color: white;
-	text-decoration: none;
-}
-
-nav #identifier a {
-	color: white;
-	text-decoration: underline;
-	font-size: 18px;
-}
-
-nav #identifier a:hover {
-	color: #ffa259;
-}
-
-nav #information {
+header nav #information {
 	align-self: center;
 	width: 5%;
 }
 
-nav ul {
+header nav ul {
 	margin: 0;
 	width: 70%;
 	height: 100%;
@@ -56,7 +34,7 @@ nav ul {
 	justify-content: space-between;
 }
 
-nav ul a {
+header nav ul a {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -67,15 +45,24 @@ nav ul a {
 	width: 150px;
 	border-left: solid 1px white;
 	border-right: solid 1px white;
-	transition: background-color 0.2s;
+	transition: background-color 0.1s;
+	margin-right: 0px;
 }
 
-nav ul a:hover {
-	background-color: #ffa259;
+header nav ul a:hover {
+	background-color: white;
+	color: steelblue;
 }
 
-
-nav ul a li {
+header nav ul a li {
 	list-style: none;
 	font-size: 18px;
+}
+
+header nav #deconnexion {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }

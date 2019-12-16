@@ -1,0 +1,27 @@
+footer {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	height: 100px;
+	background-color: black;
+	color: white;
+	width: 100%;
+	margin: 0;
+}
+
+footer p {
+	color: white;
+	margin-top: 0px;
+	text-align: center;
+	font-size: 15px;
+}
+
+footer p a {
+	color: steelblue;
+	text-decoration: none;
+}
+
+footer p a:hover {
+	text-decoration: underline;
+}
+

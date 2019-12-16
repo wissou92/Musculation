@@ -64,18 +64,18 @@ body {
 }
 
 #banniere #identification #connexion button {
-	color: #ffa259;
-	border: 2px solid #ffa259;
+	color: steelblue;
+	border: 2px solid steelblue;
 	transition: 0.2s;
 }
 
 #banniere #identification #connexion button:hover {
-	background-color: rgba(255, 162, 89, 0.10);
+	background-color: rgba(70, 130, 180, 0.20);
 	cursor: pointer;
 }
 
 #banniere #identification #inscription button {
-	background-color: #ffa259;
+	background-color: steelblue;
 	color: white;
 	border: none;
 }
@@ -100,13 +100,13 @@ body {
 
 #banniere #menu ul li a {
 	text-decoration: none;
-	color: #ffa259;
+	color: steelblue;
 	border-bottom: 2px solid rgba(0, 0, 0, 0);
 	transition: border-bottom 0.2s;
 }
 
 #banniere #menu ul li a:hover {
-	border-bottom: 1px solid #ffa259;
+	border-bottom: 1px solid steelblue;
 	cursor: pointer;
 }
 
@@ -164,7 +164,7 @@ body {
 
 #contenu h1 {
 	margin: 100px 0px;
-	color: #ffa259;
+	color: steelblue;
 	font-size: 40px;
 }
 
@@ -177,44 +177,17 @@ body {
 }
 
 #contenu a:hover button {
-	background-color: rgba(255, 162, 89, 0.25);
+	background-color: rgba(70, 130, 180, 0.20);
 	cursor: pointer;
 }
 
 #contenu a button {
-	border: 2px solid #ffa259;
+	border: 2px solid steelblue;
 	background-color: white;
-	color: #ffa259;
+	color: steelblue;
 	width: 100%;
 	height: 100%;
 	font-size: 30px;
 	border-radius: 15px;
 	transition: 0.2s;
 }
-
-footer {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
-	height: 100px;
-	background-color: black;
-	color: white;
-	width: 100%;
-	margin: 0;
-}
-
-footer p {
-	margin-top: 0px;
-	text-align: center;
-	font-size: 15px;
-}
-
-footer p a {
-	color: #ffa259;
-	text-decoration: none;
-}
-
-footer p a:hover {
-	text-decoration: underline;
-}
-
