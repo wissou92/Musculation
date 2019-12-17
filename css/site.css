@@ -16,10 +16,16 @@ body {
 	flex-direction: column;
 	justify-content: space-around;
 	align-items: center;
+	padding-bottom: 60px;
+	padding-top: 60px;
 }
 
 #contenu h1 {
 	font-size: 28px;
+	color: steelblue;
+}
+
+#contenu h2 {
 	color: steelblue;
 }
 

@@ -37,7 +37,10 @@ form label {
 	display: flex;
 	flex-direction: column;
 }
-
+.formulaire #connect_error {
+	color:red;
+	font-size: 12px;
+}
 input {
 	margin-top: 8px;
 	width: 80px;

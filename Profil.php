@@ -1,20 +1,4 @@
- <!DOCTYPE html>
-<html lang="fr">
-	<head>
-		<meta charset="UTF-8">
-		<title>Programmes Sportifs</title>
-		<link rel="stylesheet" type="text/css" href="css/site.css" >
-		<link rel="stylesheet" type="text/css" href="css/header.css">
-		<link rel="stylesheet" type="text/css" href="css/footer.css">
-		
-	</head>
-	<body>
-		<?php require('include/header.php'); ?>
-		<div id="contenu">
-			<form method="post" action="">
-				<div class="formulaire">
-					<p>Votre Profil 
-						<?php 
+<?php 
 						session_start();
 						try
 						{    
@@ -36,7 +20,26 @@
 					      $taille = $row[4];  
 					    }
 						
-					?></p>
+					?>
+
+
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<title>Programmes Sportifs</title>
+		<link rel="stylesheet" type="text/css" href="css/site.css" >
+		<link rel="stylesheet" type="text/css" href="css/header.css">
+		<link rel="stylesheet" type="text/css" href="css/footer.css">
+		
+	</head>
+	<body>
+		<?php require('include/header.php'); ?>
+		<div id="contenu">
+			<form method="post" action="">
+				<div class="formulaire">
+					<h2>Votre Profil </h2>
+						
 				</div>
 
 				<div class="formulaire">
