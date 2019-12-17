@@ -1,20 +1,4 @@
-<!DOCTYPE html>
-<html lang="fr">
-	<head>
-		<meta charset="UTF-8">
-		<title>
-			Mes Programmes
-		</title>
-		
-		<link rel="stylesheet" type="text/css" href="css/site.css">
-		<link rel="stylesheet" type="text/css" href="css/footer.css">
-		<link rel="stylesheet" type="text/css" href="css/header.css">
-	</head>
-	<body>
-		<?php require('include/header.php'); ?>
-		<div id="contenu"> 
-			<div class = "header"> 	
-				<?php 
+<?php 
 				   session_start();  $nom ;  $prenom; 
 				try
 				{    
@@ -37,8 +21,22 @@
 				      $prenom = $row [1];
 				    }
 				 ?> 
-			</div>
 
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			Mes Programmes
+		</title>
+		
+		<link rel="stylesheet" type="text/css" href="css/site.css">
+		<link rel="stylesheet" type="text/css" href="css/footer.css">
+		<link rel="stylesheet" type="text/css" href="css/header.css">
+	</head>
+	<body>
+		<?php require('include/header.php'); ?>
+		<div id="contenu"> 
 			<h1>Programmes Sportifs</h1>
 
 		    <div  class ="main">
@@ -57,7 +55,7 @@
 				 	  				   	 and '$email' = Pratique.email_adherent ; ")   
 				  						or die('Erreur SQL !<br>'.$sql3.'<br>'.mysqli_error()) ;
 
-				  	$req = $bdd->query("select P.nom, P.categorie_programme, P.prix, P.description, P.difficulte, P.avis 
+				  	$req = $bdd->query("select P.nom, P.categorie_programme, P.prix, P.description, P.difficulte, P.avis, P.id
 				 						 from Programme P, Pratique  
 				 	  				   	 where P.id = Pratique.id_programme 
 				 	  				   	 and '$email' = Pratique.email_adherent ; ")   
@@ -70,8 +68,8 @@
 				
 		          	if ( $nb != 0 ) {
 
-					    $tab[$nb][5];  			            
-
+					    $tab[$nb][6];  			            
+					    echo '<div id="contien_prog">';
 					    while (  ($row1= mysqli_fetch_array($req, MYSQLI_NUM )) &&  $i  <  $nb ) {
 								 			
 							$tab[$i][0]= $row1[0]; 
@@ -81,17 +79,18 @@
 							$tab[$i][4]= $row1[4];
 
 								 
-							echo '<div><h3>'.$tab[$i][0].'</h3>'.
-							'<p>Catégorie: '.$tab[$i][1].'</p>'.
-							'<p>Prix: '.$tab[$i][2].'$</p>'.
-							'<p>Difficulté: '.$tab[$i][4].'/20</p>'.
-							'<p>'.$tab[$i][3].'</p>'.'</div>';
+							echo '<div class="mes_prog"><h3>'.$tab[$i][0].'</h3>'.
+							'<p><strong>Catégorie:</strong> '.$tab[$i][1].'</p>'.
+							'<p><strong>Prix:</strong> '.$tab[$i][2].'$</p>'.
+							'<p><strong>Difficulté:</strong> '.$tab[$i][4].'/20</p>'.
+							'<p>'.$tab[$i][3].'</p>'.'<button id='.'"'.$tab[$i][.'"'.'>En savoir plus</button></div>';
 					 	
 				 		 	$i = $i +1 ; 
 					   }
 		    		}
-		 
-					else { echo '<div> <p>vous  avez '.$nb.' Programmes</p></div>'; }  
+		 			
+					else { echo '<div id ="prog_msg"> <p>vous  avez '.$nb.' Programmes</p></div>'; }
+					echo   '</div>';
 				  
 		        ?>
 		    </div>

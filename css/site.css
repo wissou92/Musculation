@@ -9,6 +9,7 @@ body {
 	font-weight: bold;
 	color: steelblue;
 	align-self: flex;
+	margin-right: 10px;
 }
 
 #contenu .coach {
@@ -19,6 +20,58 @@ body {
 	justify-content: space-around;
 	flex-direction: column;
 	align-items: flex-start;
+}
+
+#contenu #contien_prog {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+}
+
+#contenu .mes_prog {
+	border: 2px solid steelblue;
+	width: 400px;
+	height: 400px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	border-radius: 20px;
+	margin-bottom: 70px ;
+	transition: background-color 0.1s;
+}
+
+#contenu .mes_prog button {
+	position: relative;
+	top: -150px;
+	border: 2px solid steelblue;
+	border-radius: 10px;
+	width: 200px;
+	height: 50px;
+	display: none;
+	background-color: white;
+	color: steelblue;
+	font-size: 20px;
+	outline: none;
+}
+
+#contenu .mes_prog:hover {
+	background-color: rgba(70, 130, 180, 0.15);
+}
+
+#contenu .mes_prog:hover button {
+	display: block;
+	cursor: pointer;
+}
+
+#contenu .mes_prog p {
+	line-height: 25px;
+}
+
+#contenu .mes_prog h3 {
+	color: steelblue;
+	text-decoration: underline;
 }
 
 #contenu .description {
