@@ -82,7 +82,16 @@
 			</form>
 
 
-	<?php
+</div>
+	<?php require('include/footer.php'); ?>
+	</body>
+</html>
+
+
+
+
+
+<?php
 		if( isset($_POST))
 	   {
 	   	 
@@ -90,7 +99,7 @@
 	    {
 	    	try
 				{    
-						$bdd = new mysqli('localhost', 'root', 'user', 'Programmes_Sportifs'); $bdd->set_charset("utf8");
+						$bdd = new mysqli('localhost', 'wiss', 'wiss', 'Programmes_Sportifs'); $bdd->set_charset("utf8");
 				}
 				catch (Exception $e){   die('Erreur : ' . $e->getMessage());}	
 							
@@ -123,8 +132,3 @@
 		}
 	  }
 	?>
-</div>
-	<?php require('include/footer.php'); ?>
-	</body>
-</html>
-

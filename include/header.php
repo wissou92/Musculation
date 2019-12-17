@@ -36,10 +36,13 @@
 				<a href="/Profil.php">
 					<li>Profil</li>
 				</a>
+				<a href="#.html">
+					<li>Programme</li>
+				</a>
 				<a href="MesProgrammes.php">
 					<li>Mes Programmes</li>
 				</a>
-				<a href="#.html">
+				<a href="Coach.php">
 					<li>Coach</li>
 				</a>
 				<a href="#.html">
