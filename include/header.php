@@ -21,13 +21,13 @@
 				$resultat = $bdd->query("select nom ,prenom from Adherant where Adherant.email = '$email' ; ");
 
 						
-					if ($resultat) 
-					{
-				      $row = $resultat->fetch_row();
-				      $resultat->close();
-				      $nom= $row[0]; 
-				      $prenom = $row [1];
-				    }
+				if ($resultat) 
+				{
+				     $row = $resultat->fetch_row();
+				     $resultat->close();
+				     $nom= $row[0]; 
+				     $prenom = $row [1];
+			    }
 				     
 				    echo '<p>' . ucfirst($nom) .' '. ucfirst($prenom). '</p>';
 			?> 
@@ -45,12 +45,18 @@
 				<a href="Coach.php">
 					<li>Coach</li>
 				</a>
-				<a href="#.html">
-					<li>Mes Exercices</li>
+				<a href="Coaching.php">
+					<li>Mes Coachings</li>
 				</a>
-				<a href="#.html">
-					<li>Suivi Nutritionnel</li>
+				<?php
+					if ($email == "wissam.serhan@ens.uvsq.fr" or $email == "moussa.el-habar@ens.uvsq.fr") {
+				?>
+				<a href="Administration.php">
+					<li>Administration</li>
 				</a>
+				<?php 
+					}
+				?>
 			</ul>
 
 			<div id="deconnexion">

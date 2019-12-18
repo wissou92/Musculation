@@ -55,8 +55,7 @@
 	   		$mdp = md5($_POST['mdp_adherent']);
 	   	}
 
-    	if (isset($_POST['connexion']) and $_POST['connexion'] == 'connexion')
-    	{
+    	if (isset($_POST['connexion']) and $_POST['connexion'] == 'connexion') {
 			try {    
 				$bdd = new mysqli('localhost', 'wiss', 'wiss', 'Programmes_Sportifs');
 				$bdd->set_charset("utf8");
@@ -65,7 +64,7 @@
 				die('Erreur : ' . $e->getMessage());
 			}
 
-		// bizarre ca si l'utilisateur nexiste pas ?
+		
 											
 		$resultat = $bdd -> query ("select email, mdp from Adherant where email = '$email' and mdp = '$mdp';");
 												

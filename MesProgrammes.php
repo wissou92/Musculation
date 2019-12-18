@@ -20,7 +20,7 @@
 				      $nom= $row[0]; 
 				      $prenom = $row [1];
 				    }
-				 ?> 
+?> 
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -77,13 +77,16 @@
 							$tab[$i][2]= $row1[2]; 
 							$tab[$i][3]= $row1[3]; 
 							$tab[$i][4]= $row1[4];
+							$tab[$i][5]= $row1[5];
+							$tab[$i][6]= $row1[6];
+
 
 								 
 							echo '<div class="mes_prog"><h3>'.$tab[$i][0].'</h3>'.
 							'<p><strong>Catégorie:</strong> '.$tab[$i][1].'</p>'.
 							'<p><strong>Prix:</strong> '.$tab[$i][2].'$</p>'.
 							'<p><strong>Difficulté:</strong> '.$tab[$i][4].'/20</p>'.
-							'<p>'.$tab[$i][3].'</p>'.'<button id='.'"'.$tab[$i][.'"'.'>En savoir plus</button></div>';
+							'<p>'.$tab[$i][3].'</p>'.'<button id='.'"'.$tab[$i][6].'"'.'>En savoir plus</button></div>';
 					 	
 				 		 	$i = $i +1 ; 
 					   }
